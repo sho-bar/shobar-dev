@@ -1,0 +1,62 @@
+version: '3.1'
+
+services:
+    shobar_wp:
+        image: wordpress:5-php7.3-apache
+        container_name: shobar_wp
+        restart: always
+        ports:
+            - 4444:80
+        depends_on:
+            - shobar_db
+        volumes:
+            - ./wp/src:/var/www/html
+            - ./shobar-theme:/var/www/html/wp-content/themes/shobar
+        environment:
+            WORDPRESS_DB_HOST: shobar_db
+            WORDPRESS_DB_USER: serhii
+            WORDPRESS_DB_PASSWORD: 111111
+            WORDPRESS_DB_NAME: shobar
+            WORDPRESS_DEBUG: 1
+
+    shobar_db:
+        image: mysql:8.0
+        command: --default-authentication-plugin=mysql_native_password
+        container_name: shobar_db
+        restart: always
+        ports:
+          - 2207:3306
+        volumes:
+            - ./db/storage:/var/lib/mysql
+        environment:
+            MYSQL_DATABASE: shobar
+            MYSQL_USER: serhii
+            MYSQL_PASSWORD: 111111
+            MYSQL_ROOT_PASSWORD: 111111
+
+    shobar_phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: shobar_phpmyadmin
+        environment:
+            - PMA_ARBITRARY=1
+        restart: always
+        ports:
+            - 4321:80
+
+    shobar_node:
+        image: node:8-alpine
+        container_name: shobar_node
+        working_dir: /var/www/html/wp-content/themes/shobar
+        volumes:
+            - ./shobar-theme:/var/www/html/wp-content/themes/shobar
+        command: sh -c "npm install && npm run dev"
+        depends_on:
+            - shobar_wp
+
+    shobar_composer:
+        image: composer
+        container_name: shobar_composer
+        volumes: 
+          - ./wp/src:/var/www/html
+        working_dir: /var/www/html/wp-content/themes/shobar
+        command: composer install --ignore-platform-reqs
