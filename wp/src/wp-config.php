@@ -1,4 +1,5 @@
 <?php
+define('WP_CACHE', false);
 /**
  * The base configuration for WordPress
  *
