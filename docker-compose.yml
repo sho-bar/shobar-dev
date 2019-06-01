@@ -3,6 +3,8 @@ version: '3.1'
 services:
     shobar_wp:
         image: wordpress:php7.3-apache
+        # With opcache
+        # build: ./wp
         container_name: shobar_wp
         restart: always
         ports:
@@ -25,7 +27,7 @@ services:
         container_name: shobar_db
         restart: always
         ports:
-          - 2207:3306
+          - 2217:3306
         volumes:
             - ./db/storage:/var/lib/mysql
         environment:
@@ -49,7 +51,7 @@ services:
         working_dir: /var/www/html/wp-content/themes/shobar
         volumes:
             - ./shobar-theme:/var/www/html/wp-content/themes/shobar
-        command: sh -c "npm install && npm run dev"
+        command: sh -c "npm install && npm run prod"
         depends_on:
             - shobar_wp
 
