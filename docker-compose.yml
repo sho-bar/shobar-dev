@@ -12,7 +12,7 @@ services:
         volumes:
             - ./wp/src:/var/www/html
             - ./shobar-theme:/var/www/html/wp-content/themes/shobar
-            - ./sho-quick-pr:/var/www/html/wp-content/plugins/sho-quick-pr
+            - ./sho-admin:/var/www/html/wp-content/plugins/sho-admin
         environment:
             WORDPRESS_DB_HOST: shobar_db
             WORDPRESS_DB_USER: serhii
@@ -54,12 +54,12 @@ services:
         depends_on:
             - shobar_wp
 
-    sho_quick_pr_node:
+    sho_admin_node:
         image: node:8-alpine
-        container_name: sho_quick_pr_node
-        working_dir: /var/www/html/wp-content/plugins/sho-quick-pr
+        container_name: sho_admin_node
+        working_dir: /var/www/html/wp-content/plugins/sho-admin
         volumes:
-            - ./sho-quick-pr:/var/www/html/wp-content/plugins/sho-quick-pr
+            - ./sho-admin:/var/www/html/wp-content/plugins/sho-admin
         command: sh -c "npm install && npm run prod"
         depends_on:
             - shobar_wp
@@ -72,10 +72,10 @@ services:
         working_dir: /var/www/html/wp-content/themes/shobar
         command: composer install --ignore-platform-reqs
 
-    sho_quick_pr_composer:
+    sho_admin_composer:
         image: composer
-        container_name: sho_quick_pr_composer
+        container_name: sho_admin_composer
         volumes: 
           - ./wp/src:/var/www/html
-        working_dir: /var/www/html/wp-content/plugins/sho-quick-pr
+        working_dir: /var/www/html/wp-content/plugins/sho-admin
         command: composer install --ignore-platform-reqs
