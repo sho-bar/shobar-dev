@@ -1,6 +1,6 @@
-[submodule "shobar-theme"]
-	path = shobar-theme
-	url = git@github.com:SerhiiCho/shobar-theme.git
+[submodule "shobar"]
+	path = wp/src/wp-content/themes/shobar
+	url = git@github.com:SerhiiCho/shobar.git
 [submodule "sho-admin"]
-	path = sho-admin
+	path =  wp/src/wp-content/plugins/sho-admin
 	url = git@github.com:SerhiiCho/sho-admin.git
