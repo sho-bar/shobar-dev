@@ -1,6 +1,6 @@
 [submodule "shobar-theme"]
 	path = shobar-theme
-	url = /home/serhii/www/work/shobar/shobar-theme/
+	url = git@github.com:SerhiiCho/shobar-theme.git
 [submodule "sho-admin"]
 	path = sho-admin
-	url = /home/serhii/www/work/shobar/sho-admin/
+	url = git@github.com:SerhiiCho/sho-admin.git
