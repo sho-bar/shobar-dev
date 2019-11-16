@@ -1,0 +1,6 @@
+[submodule "shobar-theme"]
+	path = shobar-theme
+	url = /home/serhii/www/work/shobar/shobar-theme/
+[submodule "sho-admin"]
+	path = sho-admin
+	url = /home/serhii/www/work/shobar/sho-admin/
