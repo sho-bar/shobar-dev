@@ -2242,7 +2242,7 @@ function add_theme_support( $feature ) {
 			 * Merge post types with any that already declared their support
 			 * for post thumbnails.
 			 */
-			if ( is_array( $args[0] ) && isset( $_wp_theme_features['post-thumbnails'] ) ) {
+			if ( is_array($args) && is_array( $args[0] ) && isset( $_wp_theme_features['post-thumbnails'] ) ) {
 				$args[0] = array_unique( array_merge( $_wp_theme_features['post-thumbnails'][0], $args[0] ) );
 			}
 

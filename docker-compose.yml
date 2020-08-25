@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
     shobar_wp:
-        image: wordpress:php7.3-apache
+        image: wordpress:php7.4-apache
         container_name: shobar_wp
         restart: always
         ports:
