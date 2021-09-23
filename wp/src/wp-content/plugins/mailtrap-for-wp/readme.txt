@@ -2,8 +2,8 @@
 Contributors: eduardo.marcolino
 Tags: mailtrap,smtp,mailtrap for wp,email,email test,smtp test
 Requires at least: 3.0
-Tested up to: 4.9.4
-Stable tag: 0.3
+Tested up to: 5.5.3
+Stable tag: 0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,11 +22,32 @@ This plugin allows you to send all emails to your Mailtrap.io account.
 
 Setting up Mailtrap for Wordpress is very simple. Follow these easy steps
 
-1.	Upload the plugin to your `/wp-content/plugins/` directory
+1.	Upload the plugin to your `/wp-content/plugins/` directory.
 2.	Activate the plugin in your WordPress admin
 3.	Go to the settings menu and click on Mailtrap
 
+== Screenshots ==
+
+1. Access data setup
+2. Test page
+3. Inboxes listing (Requires API Token)
+4. Email reader (Requires API Token)
+
 == Changelog ==
+
+= 0.7 =
+*	Adding email reader using mailtrap API
+* Updating plugin assets
+
+= 0.6 =
+*	Updating Changelog
+
+= 0.5 =
+*	Fixing wp_mail from mail and name header
+* Improving error message
+
+= 0.4 =
+*	Fixing PHPMailer namespace
 
 = 0.3 =
 *	Updating Mailtrap smtp server

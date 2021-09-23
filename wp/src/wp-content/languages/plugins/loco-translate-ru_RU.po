@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Loco Translate - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-03-01 11:50:58+0000\n"
+"PO-Revision-Date: 2021-03-23 13:47:40+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,6 +18,13 @@ msgid_plural "%s strings"
 msgstr[0] "%s строка"
 msgstr[1] "%s строки"
 msgstr[2] "%s строк"
+
+#: src/admin/file/MoveController.php:85
+msgid "%s file moved"
+msgid_plural "%s files moved"
+msgstr[0] "%s файл перемещён"
+msgstr[1] "%s файла перемещено"
+msgstr[2] "%s файлов перемещено"
 
 #: tpl/admin/file/info-pot.php:31
 msgid "%s word"
@@ -173,6 +180,20 @@ msgstr[0] "%s строка обновлена"
 msgstr[1] "%s строки обновлено"
 msgstr[2] "%s строк обновлено"
 
+#: src/js/Strings.php:58
+msgid "%1$s string translated via %2$s"
+msgid_plural "%1$s strings translated via %2$s"
+msgstr[0] "%1$s строка переведена в %2$s"
+msgstr[1] "%1$s строки переведено в %2$s"
+msgstr[2] "%1$s строк переведено в %2$s"
+
+#: src/js/Strings.php:54
+msgid "Translation job aborted with %s string remaining"
+msgid_plural "Translation job aborted with %s strings remaining"
+msgstr[0] "Работа по переводу прервана, осталась %s строка"
+msgstr[1] "Работа по переводу прервана, осталась %s строки"
+msgstr[2] "Работа по переводу прервана, осталась %s строк"
+
 #: src/js/Strings.php:51
 msgid "Translation progress %s%%"
 msgstr "Прогресс перевода %s%%"
@@ -310,6 +331,13 @@ msgstr "Этот каталог управляется WordPress. Удаленн
 #: src/admin/file/MoveController.php:106 src/admin/file/MoveController.php:133
 msgid "Move %s"
 msgstr "Переместить %s"
+
+#: src/admin/file/MoveController.php:89
+msgid "%s file could not be moved"
+msgid_plural "%s files could not be moved"
+msgstr[0] "Не удалось переместить %s файл"
+msgstr[1] "Не удалось переместить %s файла"
+msgstr[2] "Не удалось переместить %s файлов"
 
 #: src/admin/file/BaseController.php:107
 msgid "Relocate"
@@ -575,6 +603,15 @@ msgstr "самый большой %s"
 msgid "Maximum line length (zero disables wrapping)"
 msgstr "Максимальная длина строки (ноль отключает упаковывание)"
 
+#. Translators: (1) Number of files (2) Maximum size of file that will be
+#. included (3) Size of the largest encountered
+#: src/ajax/SyncController.php:86
+msgid "%1$s file has been skipped because it's %3$s. (Max is %2$s). Check all strings are present before saving."
+msgid_plural "%1$s files over %2$s have been skipped. (Largest is %3$s). Check all strings are present before saving."
+msgstr[0] "%1$s файл пропущен, так как его размер составляет %3$s (допустимо до %2$s). Проверьте, все ли строки на месте, перед сохранением."
+msgstr[1] "%1$s файла пропущено, так как их размер составляет %3$s (допустимо до %2$s). Проверьте, все ли строки на месте, перед сохранением."
+msgstr[2] "%1$s файлов пропущено, так как их размер составляет %3$s (допустимо до %2$s). Проверьте, все ли строки на месте, перед сохранением."
+
 #: src/admin/bundle/ConfController.php:95
 msgid "Child theme declares the same Text Domain as the parent theme"
 msgstr "Дочерняя тема объявляет тот же текст домена, что и родительская"
@@ -686,6 +723,15 @@ msgstr "Отсутствует шаблон"
 #: tpl/admin/init/init-pot.php:30
 msgid "Strings will be extracted to:"
 msgstr "Строки будут извлечены в:"
+
+#. Translators: (1) Number of files excluded (2) the maximum size of file that
+#. was included
+#: tpl/admin/init/init-pot.php:24
+msgid "Excludes %1$s file over %2$s"
+msgid_plural "Excludes %1$s files over %2$s"
+msgstr[0] "Исключён %1$s файл более %2$s"
+msgstr[1] "Исключено %1$s файла более %2$s"
+msgstr[2] "Исключено %1$s файлов более %2$s"
 
 #. Translators: Where %s is the size of a file
 #: tpl/admin/init/init-pot.php:16
@@ -1311,6 +1357,15 @@ msgstr[0] "Настроенный домен не имеет строк для �
 msgstr[1] "%u настроенных домена не имеют строк для извлечения"
 msgstr[2] "%u настроенных доменов не имеют строк для извлечения"
 
+#. translators: 1: Number of strings; 2: Text Domain; e.g. 100 strings
+#. extracted from source code for "loco-translate"
+#: src/package/Debugger.php:187
+msgid "%1$s string extracted from source code for \"%2$s\""
+msgid_plural "%1$s strings extracted from source code for \"%2$s\""
+msgstr[0] "%1$s строка извлечена из исходного кода \"%2$s\""
+msgstr[1] "%1$s строки извлечено из исходного кода \"%2$s\""
+msgstr[2] "%1$s строк извлечено из исходного кода \"%2$s\""
+
 #: src/package/Core.php:87 src/admin/bundle/LocaleController.php:136
 msgid "WordPress Core"
 msgstr "Ядро WordPress"
@@ -1650,6 +1705,15 @@ msgstr[0] "%s исходный файл будет просканирован н
 msgstr[1] "%s исходных файла будет просканировано на наличие переводимых строк"
 msgstr[2] "%s исходных файлов будет просканировано на наличие переводимых строк"
 
+#. translators: 1: Number of strings; 2: Name of POT file; e.g. "100 strings
+#. found in file.pot"
+#: src/admin/init/InitPoController.php:198
+msgid "%1$s string found in %2$s"
+msgid_plural "%1$s strings found in %2$s"
+msgstr[0] "%1$s строка найдена в %2$s"
+msgstr[1] "%1$s строки найдено в %2$s"
+msgstr[2] "%1$s строк найдено в %2$s"
+
 #: src/admin/init/InitPoController.php:112
 msgid "Initializing new translations in unknown set"
 msgstr "Инициализация нового перевода для неизвестного набора"
@@ -1733,6 +1797,13 @@ msgstr "Переводы не совпадают с шаблоном. Запус
 msgid "Editing %1$s in %2$s"
 msgstr "Редактирование %1$s в %2$s"
 
+#: src/admin/file/DeleteController.php:99
+msgid "%s dependent file will also be deleted"
+msgid_plural "%s dependent files will also be deleted"
+msgstr[0] "%s зависимый файл также будет удалён"
+msgstr[1] "%s зависимых файла также будут удалены"
+msgstr[2] "%s зависимых файлов также будет удалено"
+
 #: src/admin/file/DeleteController.php:76
 #: src/admin/file/DeleteController.php:94
 msgid "Delete %s"
@@ -1807,6 +1878,13 @@ msgstr "Правка шаблона"
 #: src/admin/init/InitPoController.php:115
 msgid "New language"
 msgstr "Новый язык"
+
+#: src/admin/bundle/SetupController.php:114
+msgid "%s file can't be matched to a known set of strings"
+msgid_plural "%s files can't be matched to a known set of strings"
+msgstr[0] "%s файл не соответствует известному набору строк"
+msgstr[1] "%s файла не соответствуют известному набору строк"
+msgstr[2] "%s файлов не соответствуют известному набору строк"
 
 #: src/admin/bundle/SetupController.php:35
 msgid "Bundle setup"
