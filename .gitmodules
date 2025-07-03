@@ -4,3 +4,6 @@
 [submodule "sho-menu"]
 	path =  wp/src/wp-content/plugins/sho-menu
     url = git@github.com:sho-bar/sho-menu.git
+[submodule "wp/src/wp-content/plugins/sho-menu"]
+	path = wp/src/wp-content/plugins/sho-menu
+	url = git@github.com:sho-bar/sho-menu.git
